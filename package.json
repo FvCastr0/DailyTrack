@@ -23,7 +23,7 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "api:dev": "tsx watch --tsconfig apps/api/tsconfig.json apps/api/src/server.ts"
   },
   "keywords": [],
   "author": "",
