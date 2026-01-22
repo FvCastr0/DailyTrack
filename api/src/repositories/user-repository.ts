@@ -1,6 +1,7 @@
 import { db } from "@/db/index";
 import { users } from "@/db/schemas/user";
-import { CreateUserInput } from "@/shared/schemas/user";
+import { CreateUserInput } from "@/types";
+
 import { eq } from "drizzle-orm";
 
 export class UsersRepository {
