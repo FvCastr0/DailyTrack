@@ -1,4 +1,4 @@
-import { LoginError } from "@/errors/LoginError";
+import { LoginError } from "@/errors/user/LoginError";
 import { UsersRepository } from "@/repositories/user-repository";
 import { CreateUserInput } from "@/types";
 import bcrypt from "bcrypt";

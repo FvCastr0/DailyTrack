@@ -26,6 +26,12 @@ export class UsersRepository {
     return result[0] ?? null;
   }
 
+  async findById(id: string) {
+    const result = await db.select().from(users).where(eq(users.id, id));
+
+    return result[0] ?? null;
+  }
+
   async deleteUserById(id: string) {
     const deletedUser = await db
       .delete(users)

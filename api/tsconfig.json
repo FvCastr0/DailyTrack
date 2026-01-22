@@ -4,7 +4,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "dist",
-    "types": ["node"],
+    "types": ["node", "@fastify/jwt"],
 
     "baseUrl": ".",
     "paths": {
@@ -12,5 +12,5 @@
     }
   },
 
-  "include": ["src", "drizzle.config.ts"]
+  "include": ["src", "drizzle.config.ts", "jwt.d.ts"]
 }

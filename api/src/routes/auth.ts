@@ -1,8 +1,8 @@
-import { LoginError } from "@/errors/LoginError";
+import { LoginError } from "@/errors/user/LoginError";
 import { messages } from "@/messages";
 import { UsersRepository } from "@/repositories/user-repository";
 import { FastifyTypedInstance } from "@/types";
-import { AuthUserUseCase } from "@/use-cases/users/Auth";
+import { AuthUserUseCase } from "@/use-cases/users/AuthUser";
 import z from "zod";
 
 export async function authRoutes(app: FastifyTypedInstance) {

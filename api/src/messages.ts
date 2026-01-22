@@ -11,6 +11,11 @@ export const messages = {
         201: "Usuário criado com sucesso",
         401: "Email já utilizado"
       },
+      delete: {
+        200: "Usuário deletado com sucesso",
+        400: "Usuário inexistente",
+        401: "Você não tem autorização para isso."
+      },
       auth: {
         200: "Usuário autenticado",
         401: "Email ou senha inválidos"

@@ -1,4 +1,4 @@
-import { EmailAlreadyUsedError } from "@/errors/EmailAlreadyExistsError";
+import { EmailAlreadyUsedError } from "@/errors/user/EmailAlreadyExistsError";
 import { UsersRepository } from "@/repositories/user-repository";
 import { CreateUserInput } from "@/types";
 import bcrypt from "bcrypt";
