@@ -26,7 +26,7 @@ app.setSerializerCompiler(serializerCompiler);
 app.register(fastifySwagger, {
   openapi: {
     info: {
-      title: "Daily Track",
+      title: "Santa pá",
       version: "1.0.0"
     }
   },

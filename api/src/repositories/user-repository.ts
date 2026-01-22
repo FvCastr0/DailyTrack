@@ -25,4 +25,13 @@ export class UsersRepository {
 
     return result[0] ?? null;
   }
+
+  async deleteUserById(id: string) {
+    const deletedUser = await db
+      .delete(users)
+      .where(eq(users.id, id))
+      .returning();
+
+    return deletedUser.length === 0 ? false : true;
+  }
 }
