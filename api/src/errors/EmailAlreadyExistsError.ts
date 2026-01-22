@@ -1,5 +1,7 @@
+import { messages } from "@/messages";
+
 export class EmailAlreadyUsedError extends Error {
   constructor() {
-    super("Email already used");
+    super(messages.user.functions.create[401]);
   }
 }

@@ -13,6 +13,7 @@ import {
   validatorCompiler
 } from "fastify-type-provider-zod";
 import { ZodError } from "zod";
+import { authRoutes } from "./routes/auth";
 import { userRoutes } from "./routes/user";
 
 const app = fastify({
@@ -72,6 +73,7 @@ app.register(fastifyCors, {
 });
 
 app.register(userRoutes);
+app.register(authRoutes);
 
 app.listen({ port: 3333 }).then(() => {
   console.log("HTTP Server running on http://localhost:3333");

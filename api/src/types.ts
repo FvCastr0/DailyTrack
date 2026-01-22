@@ -9,7 +9,7 @@ import { ZodTypeProvider } from "fastify-type-provider-zod";
 import z from "zod";
 import { createUserSchema } from "./db/zod/user";
 
-export type FasityTypedInstance = FastifyInstance<
+export type FastifyTypedInstance = FastifyInstance<
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,

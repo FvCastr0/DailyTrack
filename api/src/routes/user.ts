@@ -1,13 +1,14 @@
 import { createUserSchema, userResponseSchema } from "@/db/zod/user";
 import { EmailAlreadyUsedError } from "@/errors/EmailAlreadyExistsError";
+import { messages } from "@/messages";
 import { UsersRepository } from "@/repositories/user-repository";
-import { FasityTypedInstance } from "@/types";
+import { FastifyTypedInstance } from "@/types";
 import { CreateUserUseCase } from "@/use-cases/users/CreateUser";
 import { z } from "zod";
 
 const usersRepository = new UsersRepository();
 
-export async function userRoutes(app: FasityTypedInstance) {
+export async function userRoutes(app: FastifyTypedInstance) {
   app.get(
     "/users",
     {
@@ -36,17 +37,17 @@ export async function userRoutes(app: FasityTypedInstance) {
             .object({
               message: z.string()
             })
-            .describe("User created"),
+            .describe(messages.user.functions.create[201]),
           401: z
             .object({
               message: z.string()
             })
-            .describe("Email Already used"),
+            .describe(messages.user.functions.create[401]),
           500: z
             .object({
               message: z.string()
             })
-            .describe("Email Already used")
+            .describe("Internal Server Error")
         }
       }
     },
@@ -60,7 +61,9 @@ export async function userRoutes(app: FasityTypedInstance) {
           email
         });
 
-        return reply.status(201).send({ message: "User has been created" });
+        return reply
+          .status(201)
+          .send({ message: messages.user.functions.create[201] });
       } catch (err) {
         if (err instanceof EmailAlreadyUsedError) {
           return reply.status(401).send({ message: String(err.message) });
