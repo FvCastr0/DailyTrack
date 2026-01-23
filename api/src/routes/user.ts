@@ -1,4 +1,4 @@
-import { createUserSchema, userResponseSchema } from "@/db/zod/user";
+import { createUserSchema } from "@/db/zod/user";
 import { EmailAlreadyUsedError } from "@/errors/user/EmailAlreadyExistsError";
 import { HasToBeSameAccount } from "@/errors/user/HasToBeSameAccount";
 import { NonExistentUser } from "@/errors/user/NonExistentUser";
@@ -10,25 +10,7 @@ import { CreateUserUseCase } from "@/use-cases/users/CreateUser";
 import { DeleteUserUseCase } from "@/use-cases/users/DeleteUser";
 import { z } from "zod";
 
-const usersRepository = new UsersRepository();
-
 export async function userRoutes(app: FastifyTypedInstance) {
-  app.get(
-    "/users",
-    {
-      schema: {
-        tags: ["users"],
-        description: "List users",
-        response: {
-          200: z.array(userResponseSchema)
-        }
-      }
-    },
-    async () => {
-      return usersRepository.findAll();
-    }
-  );
-
   app.post(
     "/users",
     {

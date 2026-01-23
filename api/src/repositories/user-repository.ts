@@ -5,17 +5,6 @@ import { CreateUserInput } from "@/types";
 import { eq } from "drizzle-orm";
 
 export class UsersRepository {
-  async findAll() {
-    return db
-      .select({
-        id: users.id,
-        name: users.name,
-        email: users.email,
-        createdAt: users.createdAt
-      })
-      .from(users);
-  }
-
   async create(data: CreateUserInput) {
     await db.insert(users).values(data);
   }

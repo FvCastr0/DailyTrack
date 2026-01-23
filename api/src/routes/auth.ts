@@ -18,8 +18,8 @@ export async function authRoutes(app: FastifyTypedInstance) {
             .email(messages.user.text.INVALID_EMAIL),
           password: z
             .string()
-            .min(6, messages.user.text.PASSWORD_MIN_CARACTERES)
-            .max(16, messages.user.text.PASSWORD_MAX_CARACTERES)
+            .min(6, messages.user.text.PASSWORD_MIN_CHARACTERS)
+            .max(16, messages.user.text.PASSWORD_MAX_CHARACTERS)
         }),
         response: {
           200: z

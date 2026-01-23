@@ -1,24 +1,24 @@
 export const messages = {
   user: {
     text: {
-      NAME_MIN_CARACTERES: "O nome deve ter pelo menos 2 caracteres",
-      INVALID_EMAIL: "O nome deve ter pelo menos 2 caracteres",
-      PASSWORD_MIN_CARACTERES: "A senha deve ter pelo menos 6 caracteres",
-      PASSWORD_MAX_CARACTERES: "A senha deve ter no máximo 16 caracteres"
+      NAME_MIN_CHARACTERS: "The name must have at least 2 characters",
+      INVALID_EMAIL: "The email address is invalid",
+      PASSWORD_MIN_CHARACTERS: "The password must have at least 6 characters",
+      PASSWORD_MAX_CHARACTERS: "The password must have at most 16 characters"
     },
     functions: {
       create: {
-        201: "Usuário criado com sucesso",
-        401: "Email já utilizado"
+        201: "User successfully created",
+        401: "Email already in use"
       },
       delete: {
-        200: "Usuário deletado com sucesso",
-        400: "Usuário inexistente",
-        401: "Você não tem autorização para isso."
+        200: "User successfully deleted",
+        400: "User does not exist",
+        401: "You are not authorized to perform this action"
       },
       auth: {
-        200: "Usuário autenticado",
-        401: "Email ou senha inválidos"
+        200: "User authenticated successfully",
+        401: "Invalid email or password"
       }
     }
   }
