@@ -4,7 +4,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "dist",
-    "types": ["node", "@fastify/jwt"],
+    "types": ["node", "@fastify/jwt", "vitest/globals"],
 
     "baseUrl": ".",
     "paths": {
@@ -12,5 +12,11 @@
     }
   },
 
-  "include": ["src", "drizzle.config.ts", "jwt.d.ts"]
+  "include": [
+    "src",
+    "drizzle.config.ts",
+    "jwt.d.ts",
+    "test",
+    "vitest.config.ts"
+  ]
 }
